@@ -35,16 +35,19 @@ def commonNameKey(rec):
 data = []
 # add report data
 #####################
-station = 'Birdweather PUC-4632'
-location = 'Butterfactory Lane'
+#station = 'Birdweather PUC-4632'
+#location = 'Butterfactory Lane'
 #location = 'North Haven, NSW'
 #location = 'Wiangaree, NSW'
 #location = 'Oberon, Wiangaree, North Haven'
 #####################
-#station = 'BirdNET-Pi 4325'
-#location = 'Chatham Valley'
+station = 'BirdNET-Pi 4325'
+location = 'Chatham Valley'
 #####################
-filename = "D:/Documents/Birdweather/4632 OBR WIA NH July 24.csv"
+station = 'OCSN Combined'
+location = 'Oberon LGA'
+#####################
+filename = "D:/Documents/Birdweather/OCSN Oberon 2408.csv"
 with open(filename, 'r') as file:
     csvreader = csv.reader(file)
     # read the header field names
@@ -319,9 +322,9 @@ for j in range (0,len(dayPivot)):
 # print the grandtotal            
 for i in range (0, len(grandtotal2)):
     if i < 2:
-        ax1.text(xpos[i], ypos[len(dayPivot)+1], grandtotal2[i], color = 'b', weight = 'black', ha='left', va = 'center')
+        ax1.text(xpos[i], ypos[len(dayPivot)+1], grandtotal2[i], color = 'b', weight = 'black', ha='left', va = 'center', size='small')
     else:
-        ax1.text(xpos[i], ypos[len(dayPivot)+1], grandtotal2[i], color = 'b', weight = 'black', ha='center', va = 'center')
+        ax1.text(xpos[i], ypos[len(dayPivot)+1], grandtotal2[i], color = 'b', weight = 'black', ha='center', va = 'center', size='small')
 
 # build a filename for the pivot table
 filename4 = filename3[0:len(filename3)-4]
